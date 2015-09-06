@@ -1,8 +1,8 @@
 Contents
 ========
 This repo contains:
-  +Lab Questions
-  +Assignment Solutions
+  + Lab Questions
+  + Assignment Solutions
 
 for **Data Structures**
 
@@ -11,7 +11,7 @@ for **Data Structures**
 Repo will be *updated atleast once a week.*
 
 >Anyone is free to view, copy, paste code from here
-Pull requests, forks, issues are welcome. 
+ Pull requests, forks, issues are welcome. 
 
 Open Source == Open Minds.
 -------------------------
