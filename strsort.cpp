@@ -18,14 +18,13 @@ int strcomp(char str1[80],char str2[80])
 	}
     return count;
 }
-void strcopy(char *target, char *source)
+void strcopy(char target[], char source[])
 {
-   while (*source) {
-      *target = *source;
-      source++;
-      target++;
-   }
-   *target = '\0';
+    int i;
+    for(i=0;source[i]!='\0';i++)
+        target[i]=source[i];
+    target[i]='\0';
+
 }
 int main()
 {
