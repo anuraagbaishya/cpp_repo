@@ -10,10 +10,10 @@ for **Data Structures**
 
 Repo will be *updated atleast once a week.*
 
->Anyone is free to view, copy, paste code from here
- Pull requests, forks, issues are welcome. 
+_Anyone is free to view, copy, paste code from here.
+ Pull requests, forks, issues are welcome._ 
 
 Open Source == Open Minds.
 -------------------------
  
-![A representation of Octdrey Catburn](http://octodex.github.com/images/octdrey-catburn.jpg)
+![Open Source](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRgStm2vUbgtDJ_zuTZlC5-S5pff2Cf4u9zrSood_WXs9qzAnOMkm1ptg)
