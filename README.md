@@ -13,6 +13,8 @@ Repo will be *updated atleast once a week.*
 _Anyone is free to view, copy, paste code from here.
  Pull requests, forks, issues are welcome._ 
 
+ **_Repo will be made user friendly soon. Sorry for the inconvenience_**
+
 Open Source == Open Minds.
 -------------------------
  
