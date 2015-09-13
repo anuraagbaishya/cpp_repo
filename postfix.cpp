@@ -86,7 +86,8 @@ int main()
             postfix[j++]=stk.pop();
         stk.pop();
     }
-    else{
+    else
+    {
         while(instack(stk.stktop())>=infixp(infix[i]))
             postfix[j++]=stk.pop();
         stk.push(infix[i]);

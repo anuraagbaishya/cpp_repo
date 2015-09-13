@@ -114,23 +114,24 @@ void reverse(char array[30]) // for reverse of the given expression {
 }
 //------------------------------------------
 int prcd(char ch) // returns the value that helps in the precedence {
-{	switch(ch) {
+{	switch(ch) 
+	{
 		case '+':
-		        case '-':
-		        return 2;
+        case '-':
+		return 2;
 		break;
 		case '*':
-		        case '/':
-		        return 4;
+        case '/':
+		return 4;
 		break;
 		case '$':
-		        case '^':
-		        return 6;
+        case '^':
+        return 6;
 		break;
 		case '#':
-		        case '(':
-		        case ')':
-		        return 1;
+        case '(':
+        case ')':
+        return 1;
 		break;
 	}
 }

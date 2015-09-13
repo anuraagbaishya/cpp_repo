@@ -1,8 +1,7 @@
-#include<iostream.h>
-#include<conio.h>
+#include<iostream>
 #include<stdio.h>
-#include<process.h>
-const int max=20;
+#define max 20
+using namespace std;
 const int maxs=10;
 class mul_stack
 {
@@ -63,11 +62,10 @@ void mul_stack::create(int n)
 	}
 	b[n]=max-1;
 }
-void main()
+int main()
 {
 	mul_stack ms;
 	int ch,j,n,item;
-	clrscr();
 	cout<<"Enter the number of stacks: ";
 	cin>>n;
 	ms.create(n);
@@ -88,9 +86,10 @@ void main()
 			break;
 			case 3: ms.display();
 			break;
-			case 4:exit(0);
+			case 4:
 		}
 	}
+	return 0;
 }
 
 
