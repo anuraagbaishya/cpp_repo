@@ -1,12 +1,12 @@
-#include<iostream.h>
-#include<conio.h>
+#include<iostream>
 #include<stdio.h>
-class stack
+using namespace std;
+class Stack
 {
 	int top;
 	char arr[20];
 	public:
-		stack()
+		Stack()
 		{
 			top=-1;
 		}
@@ -37,7 +37,7 @@ class stack
 				cout<<arr[i]<<endl;
 			}
 		}
-		int stackEmpty()
+		int StackEmpty()
 		{
 			if(top==-1)
 				return 1;
@@ -45,28 +45,40 @@ class stack
 				return 0;
 		}
 };
-void main()
+int main()
 {
-	clrscr();
 	char str[80];
-	stack stk;
+	Stack stk;
 	char ch;
+	int count=0,flag;
 	cout<<"Enter String: " ;
 	gets(str);
 	for(int i=0;str[i]!='\0';i++)
 	{
-		if(str[i]=='('||str[i]=='{'||str[i]=='[')
+		if((str[i]==')'||str[i]=='}'||str[i]==']')&&count==0)
+        {
+            flag=1;
+            break;
+        }
+		else if(str[i]=='('||str[i]=='{'||str[i]=='[')
+		{
 			stk.push(str[i]);
-		else if(str[i]==')'||str[i]=='}'||str[i]=='}')
+            count++;
+        }
+		else if(str[i]==')'||str[i]=='}'||str[i]==']')
 		{
 			char ch=stk.pop();
 			if(str[i]==')'&&ch!='('||str[i]=='}'&&ch!='{'||str[i]==']'&&ch!='[')
 				break;
 		}
+		else
+            continue;
 	}
-	if(stk.stackEmpty())
+	if(flag==1)
+        cout<<"Wrong";
+	else
+	if(stk.StackEmpty())
 		cout<<"Correct";
 	else
 		cout<<"Wrong";
-	getch();
 }

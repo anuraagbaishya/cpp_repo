@@ -57,9 +57,9 @@ void sm::transpose(sm s[],sm s2[])
 			{
 				if(s[j].c==i)
 				{
-					s2[k].r=s[k].c;
-					s2[k].c=s[k].r;
-					s2[k].v=s[k].v;
+					s2[k].r=s[j].c;
+					s2[k].c=s[j].r;
+					s2[k].v=s[j].v;
 					k++;
 				}
 			}

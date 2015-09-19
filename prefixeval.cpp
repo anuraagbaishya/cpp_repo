@@ -19,7 +19,7 @@ class Stack
 		}
 		void push(char ch)
 		{
-			if(top==19)
+			if(top>19)
 				cout<<"Stack is full";
 			else
 			{
@@ -74,30 +74,35 @@ int performOperation(int op1, int op2, char op)
     }
     return ans;
 }
-
-
 int main()
 {
     char exp[1000];
     int i,op1, op2, len, j, x;
     Stack s;
-    printf("Enter a Postfix Expression: ( e.g. 23 34 * )\n");
+    printf("Enter a Prefix Expression: \n");
     gets(exp);
+    int k=0;
+    char str1[80];
+    for(int i=strlen(exp)-1;i>=0;i--)
+    {
+        str1[k++]=exp[i];
+    }
+    str1[k]='\0';
     len = strlen(exp);
     j = 0;
     for(i=0; i<len;i++)
     {
-        if(exp[i]>='0' && exp[i]<='9')
+        if(str1[i]>='0' && str1[i]<='9')
         {
-            s.push(exp[i]-'0');
+            s.push(str1[i]-'0');
         }
-        else if(isOperator(exp[i]))
+        else if(isOperator(str1[i]))
         {
             op1 = s.stktop();
             s.pop();
             op2 = s.stktop();
             s.pop();
-            s.push(performOperation(op1, op2, exp[i]));
+            s.push(performOperation(op2, op1, str1[i]));
         }
     }
 

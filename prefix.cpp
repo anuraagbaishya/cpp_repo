@@ -14,7 +14,7 @@ class Stack
     }
     void push(char ch)
     {
-        if(top>MAX-1)
+        if(top==MAX-1)
         {
             cout<<"Stack Full";
         }
@@ -114,7 +114,7 @@ void reverse(char array[30]) // for reverse of the given expression {
 }
 //------------------------------------------
 int prcd(char ch) // returns the value that helps in the precedence {
-{	switch(ch) 
+{	switch(ch)
 	{
 		case '+':
         case '-':

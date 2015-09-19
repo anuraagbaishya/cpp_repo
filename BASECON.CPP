@@ -1,7 +1,5 @@
-#include<iostream.h>
-#include<conio.h>
-#include<process.h>
-
+#include<iostream>
+using namespace std;
 class Stack
 {
 	int top;
@@ -13,7 +11,7 @@ class Stack
 	}
 	void push(int item)
 	{
-		if(top>9)
+		if(top==9)
 			cout<<"Stack is full";
 		else
 		{
@@ -39,9 +37,9 @@ class Stack
 			return 1;
 	}
 };
-void main()
+int main()
 {
-	clrscr();
+	//clrscr();
 	Stack stkbin,stkoct,stkhex;
 	int num,n;
 	cout<<"Enter number: "<<endl;
@@ -75,22 +73,22 @@ void main()
 	cout<<"Hexadecimal number: ";
 	while(stkhex.return_top())
 	{
-	     int x=stkhex.pop();
-	     if(x==10)
-		cout<<"A";
-	     else if(x==11)
-		cout<<"B";
-	     else if(x==12)
-		cout<<"C";
-	     else if(x==13)
-		cout<<"D";
-	     else if(x==14)
-		cout<<"E";
-	     else if(x==15)
-		cout<<"F";
-	     else
-		cout<<x;
+	    int x=stkhex.pop();
+	    if(x==10)
+			cout<<"A";
+	    else if(x==11)
+			cout<<"B";
+	    else if(x==12)
+			cout<<"C";
+	    else if(x==13)
+			cout<<"D";
+		else if(x==14)
+			cout<<"E";
+	    else if(x==15)
+			cout<<"F";
+	    else
+			cout<<x;
 	}
-	getch();
+	//getch();
 }
 

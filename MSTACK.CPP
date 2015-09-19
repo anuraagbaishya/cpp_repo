@@ -87,9 +87,8 @@ int main()
 			case 3: ms.display();
 			break;
 			case 4:
+			break;
 		}
 	}
 	return 0;
 }
-
-

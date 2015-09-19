@@ -46,7 +46,7 @@ class Stack
 		}
 		void push(char ch)
 		{
-			if(top>19)
+			if(top==19)
 				cout<<"Stack is full";
 			else
 			{
