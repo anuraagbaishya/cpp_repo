@@ -19,6 +19,17 @@ class Stack{
         return a[top--];
     }
 };
+void reverse(char array[30])
+{
+    int i,j;
+	char temp[100];
+	for (i=strlen(array)-1,j=0;i+1!=0;--i,++j)
+	{
+		temp[j]=array[i];
+	}
+	temp[j]='\0';
+	strcpy(array,temp);
+}
 int isOperator(char ch)
 {
     if (ch=='+' || ch=='-' || ch=='*' || ch=='/' || ch=='^' || ch=='$')
@@ -28,16 +39,17 @@ int isOperator(char ch)
 }
 int main()
 {
-    char temp[20],postfix[20],op[2],op1[20],op2[20];
+    char temp[20],prefix[20],op[2],op1[20],op2[20];
     cout<<"Enter Expression \n";
-    gets(postfix);
+    gets(prefix);
+    reverse(prefix);
     Stack s;
     int i=0;
-    while(postfix[i]!='\0')
+    while(prefix[i]!='\0')
     {
-        op[0]=postfix[i];
+        op[0]=prefix[i];
         op[1]='\0';
-        if(!isOperator(postfix[i]))
+        if(!isOperator(prefix[i]))
         {
             s.push(op);
         }
@@ -46,9 +58,9 @@ int main()
             strcpy(op2,s.pop());
             strcpy(op1,s.pop());
             strcpy(temp, "(");
-            strcat(temp,op1);
-            strcat(temp,op);
             strcat(temp,op2);
+            strcat(temp,op);
+            strcat(temp,op1);
             strcat(temp,")");
             s.push(temp);
         }

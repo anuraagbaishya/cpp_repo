@@ -100,8 +100,7 @@ void infixtoprefix(char infix[20],char prefix[20])
 	}
 	prefix[j]='\0';
 }
-////--------------------------------------------------------
-void reverse(char array[30]) // for reverse of the given expression {
+void reverse(char array[30])
 {
     int i,j;
 	char temp[100];
@@ -112,8 +111,7 @@ void reverse(char array[30]) // for reverse of the given expression {
 	temp[j]='\0';
 	strcpy(array,temp);
 }
-//------------------------------------------
-int prcd(char ch) // returns the value that helps in the precedence {
+int prcd(char ch)
 {	switch(ch)
 	{
 		case '+':
@@ -135,7 +133,6 @@ int prcd(char ch) // returns the value that helps in the precedence {
 		break;
 	}
 }
-//-------------------------------------------------
 int isOperator(char ch) {
 	switch(ch) {
 		case '+':
@@ -151,6 +148,5 @@ int isOperator(char ch) {
 		break;
 		default:
 		        return 0;
-		// returns 0 if the ch is other than given above
 	}
 }

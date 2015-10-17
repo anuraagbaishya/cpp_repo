@@ -71,32 +71,33 @@ class Stack
 };
 int main()
 {
-  Stack stk;
-  int i=0,j=0;
-  char c,d;
-  char postfix[20],infix[20];
-  gets(infix);
-  stk.push('#');
-  while(infix[i]!='\0'){
-    c=infix[i];
-    if((c>=97&&c<=122)||(c>=65&&c<=90)||(c>=48&&c<=57))
-        postfix[j++]=c;
-    else if(infix[i]==')'){
-        while(stk.stktop()!='(')
-            postfix[j++]=stk.pop();
-        stk.pop();
+    int i=0,j=0;
+    char infix[20];
+    cout<<"Enter infix expression \n";
+    gets(infix);
+    Stack stk;
+    stk.push('#');
+    char c,d;
+    char postfix[400];
+    while(infix[i]!='\0'){
+        c=infix[i];
+        if((c>=97&&c<=122)||(c>=65&&c<=90)||(c>=48&&c<=57))
+            postfix[j++]=c;
+        else if(infix[i]==')'){
+                while(stk.stktop()!='(')
+                postfix[j++]=stk.pop();
+            stk.pop();
+        }
+        else
+        {
+            while(instack(stk.stktop())>=infixp(infix[i]))
+                postfix[j++]=stk.pop();
+            stk.push(infix[i]);
+        }
+        i++;
     }
-    else
-    {
-        while(instack(stk.stktop())>=infixp(infix[i]))
-            postfix[j++]=stk.pop();
-        stk.push(infix[i]);
-    }
-    i++;
-  }
-  while(stk.stktop()!='#')
-    postfix[j++]=stk.pop();
-  postfix[j]='\0';
-  puts(postfix);
-  return 0;
+    while(stk.stktop()!='#')
+        postfix[j++]=stk.pop();
+    postfix[j]='\0';
+    puts(postfix);
 }

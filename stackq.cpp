@@ -11,7 +11,7 @@ class Stack
 		}
 		void push(char ch)
 		{
-			if(top==3)
+			if(top>19)
 				cout<<"Stack is full";
 			else
 			{
@@ -49,7 +49,7 @@ class Stack
 		}
 		int isFull()
 		{
-            if (top>3)
+            if (top==2)
                 return 1;
             else
                 return 0;
@@ -65,7 +65,6 @@ int main()
     int ch,y,x;
     Stack s,s2;
     x=s.retop();
-    y=s2.retop();
     do{
         char n;
         cin>>ch;
@@ -74,15 +73,12 @@ int main()
             case 1:
             cout<<"Enter: ";
             cin>>n;
-            if(s2.isEmpty()&&!s.isFull())
-            {
+            if(s2.isEmpty()&&!s.isFull()){
                 s.push(n);
-                x=s.retop();
-                cout<<x<<"here\n";
-                cout<<s.isFull()<<endl;
             }
-            else if(!s.isFull()&&y<=9)
+            else if(!s.isFull()&&s2.retop()<3)
             {
+                y=s2.retop();
                 s.resettop();
                 for(int i=0;i<=y;i++)
                 {

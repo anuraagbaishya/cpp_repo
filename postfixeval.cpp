@@ -100,7 +100,6 @@ int main()
             s.push(performOperation(op1, op2, exp[i]));
         }
     }
-
-    printf("Answer is %d\n", s.stktop());
+    cout<<"Answer is: "<<(int)s.stktop();
     return 0;
 }
