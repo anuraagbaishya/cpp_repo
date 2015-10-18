@@ -1,8 +1,3 @@
-/*
- * Postfix Evaluation
- * Language: C++
- */
-
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
@@ -106,6 +101,6 @@ int main()
         }
     }
 
-    printf("Answer is %d\n", s.stktop());
+    cout<<"Answer is: "<<(int)s.stktop();
     return 0;
 }

@@ -29,13 +29,6 @@ class Stack
 			}
 			return ch;
 		}
-		void display()
-		{
-			for (int i=top-1;i>=0;i--)
-			{
-				cout<<arr[i]<<endl;
-			}
-		}
 		int retop()
 		{
             return top;
@@ -49,7 +42,7 @@ class Stack
 		}
 		int isFull()
 		{
-            if (top==2)
+            if (top==19)
                 return 1;
             else
                 return 0;
@@ -76,7 +69,7 @@ int main()
             if(s2.isEmpty()&&!s.isFull()){
                 s.push(n);
             }
-            else if(!s.isFull()&&s2.retop()<3)
+            else if(!s.isFull()&&s2.retop()<20)
             {
                 y=s2.retop();
                 s.resettop();

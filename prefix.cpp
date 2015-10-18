@@ -42,14 +42,13 @@ int prcd(char ch);
 int main()
 {
 	char infix[20],prefix[20],temp;
-	printf("Enter infix operation: ");
+	cout<<"Enter infix expression: ";
 	gets(infix);
 	infixtoprefix(infix,prefix);
 	reverse(prefix);
 	puts((prefix));
 	return 0;
 }
-//--------------------------------------------------------
 void infixtoprefix(char infix[20],char prefix[20])
 {
 	Stack stck;
@@ -90,8 +89,7 @@ void infixtoprefix(char infix[20],char prefix[20])
                 }
                 stck.push(ch);
             }
-				//end for else
-        }
+		}
     }
 	while (stck.retop()!='#')
 	{
@@ -141,7 +139,7 @@ int isOperator(char ch) {
 		        case '/':
 		        case '^':
 		        case '$':
-		        case '&':
+		        case '#':
 		        case '(':
 		        case ')':
 		        return 1;
