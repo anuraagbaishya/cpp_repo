@@ -2,7 +2,6 @@
 #include<stdio.h>
 using namespace std;
 class TreeNode {
-    friend class Queue;
     int val;
     TreeNode *left;
     TreeNode *right;
