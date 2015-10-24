@@ -56,9 +56,7 @@ node* node::insbef(node *first)
         }
         else
         {
-            for(prev=first,current=first->next;
-            current!=NULL;
-            current=current->next,prev=prev->next)
+            for(prev=first,current=first->next;current!=NULL;current=current->next,prev=prev->next)
             {
                 if(current->data==n)
                 {
@@ -183,7 +181,7 @@ node* node::sort(node *first)
     {
         node *temp=current->next;
         while(temp!=NULL)
-        {
+         {
             if(temp->data<current->data)
             {
                 int t=temp->data;
@@ -229,7 +227,6 @@ node* node::sortord(node *first)
     temp->next=NULL;
     if(n<first->data)
     {
-        temp->data=n;
         temp->next=first;
         return temp;
     }
@@ -263,7 +260,7 @@ int main()
     int ch;
     char ch2,ch3;
     node l;
-    node *first=NULL,*last=NULL;
+    node *first=NULL;
     do
     {
         //clrscr();

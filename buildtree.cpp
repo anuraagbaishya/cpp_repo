@@ -1,3 +1,4 @@
+//WARNING: Lot of recursion ahead.
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -17,7 +18,7 @@ class TreeNode {
         left=NULL;
         right=NULL;
     }
-    TreeNode *create(int inorder[10], int postorder[10], int ist, int ied, int ped) {
+    TreeNode *create(int inorder[10], int postorder[10], int ist, int ied, int ped) {//create tree from postorder and inorder traversal
             if(ist>ied)
                 return NULL;
             TreeNode *res=new TreeNode(postorder[ped]);
@@ -29,14 +30,14 @@ class TreeNode {
             res->left = create(inorder,postorder,ist,mid-1, ped-1-ied+mid);
             return res;
     }
-    void printLevelOrder(TreeNode* root)
+    void printLevelOrder(TreeNode* root)//print level order
     {
         int h = height(root);
         int i;
         for(i=1; i<=h; i++)
         printGivenLevel(root, i);
     }
-    void printGivenLevel(TreeNode* root, int level)
+    void printGivenLevel(TreeNode* root, int level)//recursive level printing
     {
         if(root == NULL)
         return;
@@ -48,7 +49,7 @@ class TreeNode {
             printGivenLevel(root->right, level-1);
         }
     }
-    int height(TreeNode* node)
+    int height(TreeNode* node)//height of tree
     {
         if (node==NULL)
             return 0;
@@ -64,7 +65,7 @@ class TreeNode {
             else return(rheight+1);
         }
     }
-    void inorder(TreeNode* root)
+    void inorder(TreeNode* root)//recursive inorder traversal
     {
         if(root != NULL)
         {
