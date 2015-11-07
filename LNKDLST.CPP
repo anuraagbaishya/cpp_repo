@@ -261,13 +261,13 @@ int main()
     char ch2,ch3;
     node l;
     node *first=NULL;
+    cout<<"\n1)Create \n2)Insert Before\n";
+    cout<<"3)Insert After\n4)Delete\n";
+    cout<<"5)Traverse\n6)Reverse\n7)Sort\n8)Delete Alternate\n9)Insert Ordered\n10 Exit\n";
     do
     {
         //clrscr();
         int i;
-        cout<<"\n1)Create \n2)Insert Before\n";
-        cout<<"3)Insert After\n4)Delete\n";
-        cout<<"5)Traverse\n6)Reverse\n7)Sort\n8)Delete Alternate\n9)Insert Ordered\n10 Exit\n";
         cout<<endl<<endl<<"Enter Choice: ";
         cin>>ch;
         switch(ch)

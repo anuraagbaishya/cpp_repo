@@ -1,21 +1,18 @@
-#include<iostream.h>
-#include<conio.h>
+#include<fstream>
 
-void main()
+int main()
 {
-	clrscr();
-	int i,j,small,arr[100],n;
-	cout<<"Enter the number of elements: ";
-	cin>>n;
-	cout<<"Enter the elements: "<<endl;
-	for (i=0;i<n;i++)
-	{
-		cin>>arr[i];
-	}
-	for (i=0;i<n-1;i++)
+	std::ifstream infile("Generate1.txt");
+	int a,arr[100000],i=0,j;
+	while(infile>>a)
+    {
+        arr[i]=a;
+        i++;
+    }
+	for (i=0;i<99999;i++)
 	{
 		int small=i;
-		for(j=i+1;j<n;j++)
+		for(j=i+1;j<100000;j++)
 			if (arr[j]<arr[small])
 				small=j;
 
@@ -23,10 +20,6 @@ void main()
 		arr[i]=arr[small];
 		arr[small]=temp;
 	}
-	cout<<"\nSorted array: ";
-	for(i=0;i<n;i++)
-		cout<<arr[i]<<endl;
-	getch();
 }
 
 

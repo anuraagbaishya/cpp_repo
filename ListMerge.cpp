@@ -67,94 +67,31 @@ node* node::mergelist(node *first,node *second)
     }
     return result;
 }
-// node* node::merge(node *l1,node *l2)
-// {
-//    	node *temp,*pre_node,*pptr,*qptr;
-//   	int data;
-//    	node *res=temp;
-//    	pptr=l1;
-//    	qptr=l2;
-//    	temp=pre_node=temp=NULL;
-//    	while(pptr!=NULL && qptr!=NULL)
-//    	{
-//       	if(pptr->data<=qptr->data)
-//       	{
-// 	 			data=pptr->data;
-// 	 			pptr=pptr->next;
-//       	}
-//       	else
-//       	{
-// 	 		data=qptr->data;
-// 	 		qptr=qptr->next;
-//       	}
-//   		temp=new node;
-//   		temp->data=data;
-//   		temp->next=NULL;
-//       	if(pre_node==NULL)
-// 	 		pre_node=temp;
-//       	else
-//       	{
-// 	 		pre_node->next=temp;
-//         	pre_node=temp;
-//         }
-//    	}
-//    	if(pptr==NULL)
-//    	{
-//       	while(qptr!=NULL)
-//       	{
-// 	 		temp=new node;
-// 	 		temp->data=qptr->data;
-// 	 		temp->next=NULL;
-// 	 		if(pre_node==NULL)
-// 	    		pre_node=temp;
-// 	 		else
-// 	 		{
-// 	    		pre_node->next=temp;
-// 	 			pre_node=temp;
-// 	 		}
-// 	 		qptr=qptr->next;
-//    	   }
-//    	}
-//    	else if(qptr==NULL)
-//    	{
-//       	while(pptr!=NULL)
-//       	{
-// 	 		temp=new node;
-// 	 		temp->data=pptr->data;
-// 	 		temp->next=NULL;
-// 	 		if(pre_node==NULL)
-// 	    		pre_node=temp;
-// 	 		else
-// 	 		{
-// 	    		pre_node->next=temp;
-// 	 			pre_node=temp;
-// 	 		}
-// 	 		pptr=pptr->next;
-//     	}
-//  	}
-//    return res;
-// }
 int main()
 {
-	node *first1=NULL, *first2=NULL,*third=NULL,*fourth=NULL;
+	node *x=NULL, *y=NULL,*z=NULL;
 	node l;
-	int n,i=0,data;
-	do{
-		cout<<"Enter list no.: ";
-		cin>>n;
-		cout<<"Data: ";
-		cin>>data;
-		if(n==1)
-			first1=l.create(first1,data);
-		else
-			first2=l.create(first2,data);
-		i++;
-	}while(i!=6);
-	l.trav(first1);
-	l.trav(first2);
-	third=l.mergelist(first1,first2);
-	l.trav(third);
-	fourth=l.merge(first1,first2);
-	l.trav(fourth);
-
+	int n,i=0,a;
+	cout<<"Enter no of elements in list 1:"<<endl;
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		cout<<"Enter Data: ";
+		cin>>a;
+		x=l.create(x,a);
+	}
+	cout<<endl<<"Entered List:"<<endl;
+	l.trav(x);
+	cout<<"Enter no of elements in list 2:"<<endl;
+	cin>>n;
+	for(int i=0;i<n;i++)
+	{
+		cout<<"Enter Data: ";
+		cin>>a;
+		y=l.create(y,a);
+	}
+	cout<<endl<<"Entered List: "<<endl;
+	l.trav(y);
+	z=l.mergelist(x,y);
+	l.trav(z);
 }

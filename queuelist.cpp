@@ -3,8 +3,9 @@
 using namespace std;
 class node
 {
+    public:
     int info;
-    struct node *next;
+    node *next;
 };
 class Queue
 {
@@ -45,7 +46,7 @@ void Queue::dequeue()
     node *temp = new node;
     if(front == NULL)
     {
-        cout<<"nQueue is Emtptyn";
+        cout<<"Queue is Emtpty\n";
     }
     else
     {
@@ -61,42 +62,43 @@ void Queue::display()
     p = front;
     if(front == NULL)
     {
-        cout<<"nNothing to Displayn";
+        cout<<"Nothing to Display\n";
     }
     else
     {
         while(p!=NULL)
         {
-            cout<<endl<<p->info;
+            cout<<p->info<<endl;
             p = p->next;
         }
     }
 }
 int main()
 {
-    Queue queue;
+    Queue *queue=new Queue();
     int choice;
     while(true)
     {
-        cout<<"n1.Enqueuen2. Dequeuen3. Displayn 4.Quit";
-        cout<<"nEnter your choice: ";
+        cout<<"1.Enqueue 2. Dequeue 3. Display 4.Quit\n";
         cin>>choice;
         switch(choice)
         {
             case 1:
-            queue.enqueue();
+            queue->enqueue();
             break;
             case 2:
-            queue.dequeue();
+            queue->dequeue();
+            cout<<endl;
             break;
             case 3:
-            queue.display();
+            queue->display();
+            cout<<endl;
             break;
             case 4:
             exit(0);
             break;
             default:
-            cout<<"nInvalid Input. Try again! n";
+            cout<<"Invalid Input. Try again!";
             break;
         }
     }

@@ -13,38 +13,28 @@ class StackusingList
 {
   private:
       node *top;
-      int count; //head
-      int maxnum;
   public:
-  StackusingList(int max)
+  StackusingList()
   {
       top = NULL;
-      maxnum = max;
-      count=0;
   }
   void push(int element)
   {
-      if(count == maxnum)
-              cout<<"stack is full";
-      else
-      {
           node *newTop = new node;
           if(top == NULL)
           {
               newTop->data = element;
               newTop->next = NULL;
               top = newTop;
-              count++;
           }
           else
           {
               newTop->data = element;
               newTop->next = top;
               top = newTop;
-              count++;
+              //count++;
           }
       }
-  }
 
   void pop()
   {
@@ -55,7 +45,7 @@ class StackusingList
           node * old = top;
           cout<<top->data<<" popped\n";
           top = top->next;
-          count--;
+          //count--;
           delete(old);
       }
   }
@@ -72,17 +62,26 @@ class StackusingList
 };
 
 int main() {
-    int max,a;
-    std::cout << "Enter no of elements" << std::endl;
-    std::cin >> max;
-    StackusingList *sl=new StackusingList(max);
-    std::cout << "Enter elements" << std::endl;
-    for (int i=0;i<max;i++) {
-      cin>>a;
-      sl->push(a);
-    }
-    sl->pop();
-    cout<<"new stack\n";
-    sl->print();
+    int ch,a;
+    StackusingList *sl=new StackusingList();
+    do{
+        std::cout<<"1.Push 2.Pop 3.Display 4.Exit\n";
+        std::cin>>ch;
+        switch(ch)
+        {
+            case 1:
+            std::cout << "Enter elements" << std::endl;
+            cin>>a;
+            sl->push(a);
+            break;
+            case 2:
+            sl->pop();
+            break;
+            case 3:
+            sl->print();
+            std::cout<<"\n";
+            break;
+        }
+    }while(ch!=4);
     return 0;
 }
